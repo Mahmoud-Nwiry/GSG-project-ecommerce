@@ -9,7 +9,8 @@ const palette = {
 }
 
 const lightPalette = {
-    background : '#ffffff',
+    background : '#FFFFFF',
+    pageBackground : '#F7FAFC',
     contentColor : '#1C1C1C',
     gray100 : '#F7FAFC',
     gray200 : '#EFF2F4',
@@ -17,6 +18,7 @@ const lightPalette = {
     gray400 : '#BBBCBE',
     gray500 : '#8B96A5',
     gray600 : '#505050',
+    gray800 : '#606060',
 }
 
 export const lightTheme = {

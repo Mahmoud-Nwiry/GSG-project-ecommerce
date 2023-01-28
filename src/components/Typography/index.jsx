@@ -2,7 +2,6 @@ import React from "react";
 import {
   Body1Styled,
   Body2Styled,
-  Body3Styled,
   H1Styled,
   H2Styled,
   H3Styled,
@@ -52,13 +51,6 @@ export const Body2 = ({ children, style }) => {
     <Body2Styled {...(style ? (style = { style }) : "")}>
       {children}
     </Body2Styled>
-  );
-};
-export const Body3 = ({ children, style }) => {
-  return (
-    <Body3Styled {...(style ? (style = { style }) : "")}>
-      {children}
-    </Body3Styled>
   );
 };
 

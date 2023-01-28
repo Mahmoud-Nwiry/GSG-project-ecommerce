@@ -56,3 +56,25 @@ export const CheckboxStyled = styled.input`
         content: url(${checkedIcon});
     }
 `
+
+export const TextareaStyled = styled.textarea`
+    ${props => `
+        background-color : ${props.theme.palette.background};
+        border : 1px solid ${props.theme.palette.gray300};
+        width : ${props.width || '100%'};
+        color : ${props.theme.palette.contentColor};
+    `}
+    border-radius: 6px;
+    padding : 10px;
+    outline : none;
+    font-size : 16px;
+    position : relative;
+
+    &::placeholder {
+        color: ${props => props.theme.palette.gray500};
+    }
+
+    &:focus {
+        border : 1px solid ${props => props.theme.palette.primary};
+    }
+`

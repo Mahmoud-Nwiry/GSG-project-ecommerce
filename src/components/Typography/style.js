@@ -49,12 +49,7 @@ export const Body2Styled = styled.p`
     line-height: 16px;
     color: ${props => props.muted ? props.theme.palette.gray500 : props.theme.palette.gray600};
 `
-export const Body3Styled = styled.p`
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-    color: ${props => props.muted ? props.theme.palette.gray500 : props.theme.palette.gray600};
-`
+
 export const LabelStyled = styled.label`
     font-weight: 400;
     font-size: 16px;
