@@ -1,6 +1,6 @@
 import React from 'react'
 import AuthFooter from '../../components/AuthFooter'
-import { Form } from '../../components/Form/Form'
+import { Form } from '../../components/Form'
 import { FormLayoutStyled } from './style'
 
 const AuthLayout = ({children}) => {
