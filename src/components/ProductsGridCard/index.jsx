@@ -4,7 +4,7 @@ import { ProductGridCardStyled } from "./style";
 
 import Rating from '../../assets/images/rating.png'
 
-import { RxDotFilled, RxHeart, RxHeartFilled } from 'react-icons/rx'
+import { RxHeart } from 'react-icons/rx'
 
 
 const ProductGridCard = ({ image, name, rating, price, offer }) => {

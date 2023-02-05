@@ -3,7 +3,7 @@ import { ProductRowCardStyled } from "./style";
 
 import Rating from '../../assets/images/rating.png'
 
-import { RxDotFilled, RxHeart, RxHeartFilled } from 'react-icons/rx'
+import { RxDotFilled, RxHeart } from 'react-icons/rx'
 import { Link } from "react-router-dom";
 
 const ProductRowCard = ({

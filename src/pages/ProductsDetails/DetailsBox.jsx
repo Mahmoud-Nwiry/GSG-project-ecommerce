@@ -13,7 +13,7 @@ import {
   MdOutlineVerifiedUser,
   MdLanguage
 } from "react-icons/md";
-import { RxDotFilled, RxHeart, RxHeartFilled } from "react-icons/rx";
+import { RxDotFilled, RxHeart } from "react-icons/rx";
 
 
 import {

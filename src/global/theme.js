@@ -32,7 +32,7 @@ export const lightTheme = {
 
 const darkPalette = {
     background : '#111',
-    pageBackground : '#151719',
+    pageBackground : '#292b2e',
     contentColor : '#FFFFFF',
     gray100 : '#151719',
     gray200 : '#212529',
