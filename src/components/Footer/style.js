@@ -76,4 +76,11 @@ export const CopyrightStyled = styled.div`
         align-items: center;
         justify-content: space-between;
     }
+
+    & .content-copyright p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: ${props=>props.theme.palette.contentColor}
+    }
 `

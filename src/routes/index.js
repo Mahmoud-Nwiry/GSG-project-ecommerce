@@ -1,4 +1,5 @@
 import MainLayout from '../layouts/MainLayout'
+import Cart from '../pages/Cart';
 
 import Home from '../pages/Home';
 import Products from '../pages/Products';
@@ -24,6 +25,10 @@ export const routes = [
           element : <ProductsDetails />
         }
       ]
+    },
+    {
+      path : '/cart',
+      element : <Cart />
     },
     authRouts
 ];

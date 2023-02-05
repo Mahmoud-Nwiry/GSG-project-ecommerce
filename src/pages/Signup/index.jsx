@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Buttons/Button";
 import Checkbox from "../../components/inputs/Checkbox";
 import InputWithLabel from "../../components/inputs/InputWithLabel";
-import { H4, H6 } from "../../components/Typography";
+import { H4, H6, Label } from "../../components/Typography";
 import AuthLayout from "../../layouts/AuthLayout";
+import { PhoneStyled } from "./style";
 
 const initValues = {
   name: "",
@@ -68,6 +69,14 @@ const Signup = () => {
           marginTop: "20px",
         }}
       />
+
+      <Label style={{marginTop : 20, display: 'block'}}>Phone</Label>
+      <PhoneStyled>
+        <select>
+          <option>UZ +998</option>
+        </select>
+        <input type="text" placeholder="00-000-00-00" />
+      </PhoneStyled>
 
       <InputWithLabel
         label="Password"
