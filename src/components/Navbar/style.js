@@ -16,15 +16,20 @@ export const AuthLinksStyled = styled.ul`
         text-align: center;
     }
 
-    & li a{
+    & li a,
+    & li span {
         color : ${props => props.theme.palette.gray500};
         text-decoration : none;
+        cursor: pointer;
     }
-    & li a svg {
+
+    & li a svg,
+    & li span svg {
         font-size : 20px;
     }
 
-    & li a p {
+    & li a p,
+    & li span p {
         font-weight: 400;
         font-size: 13px;
         padding-top: 5px;
