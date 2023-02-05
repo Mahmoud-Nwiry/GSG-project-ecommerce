@@ -1,92 +1,165 @@
-import React, { useState } from 'react'
-import According from '../../components/According'
+import React, { useState, useContext } from "react";
+import According from "../../components/According";
+import Checkbox from "../../components/inputs/Checkbox";
+import Radios from "../../components/inputs/Radios";
+import { brands, category, condition, features, rating } from "./data";
+import { FilterContext } from "./FilterContext";
 
+const Sidebar = ({ addItem }) => {
+  return (
+    <div>
+      <According title="Category" content={<Catigories addItem={addItem} />} />
+      <According title="Brands" content={<Brands addItem={addItem} />} />
+      <According title="Features" content={<Features addItem={addItem} />} />
+      <According
+        title="Price range"
+        content={<Catigories addItem={addItem} />}
+      />
+      <According title="Condition" content={<Condition addItem={addItem} />} />
+      <According title="Ratings" content={<Rating addItem={addItem} />} />
+    </div>
+  );
+};
 
-
-const Catigories = ({addItem}) => {
-
+const Catigories = () => {
   const [numOfShow, setNumOfShow] = useState(4);
+  const { setFilter } = useContext(FilterContext);
 
-  const handelItem = (id) => {
-    
+  return (
+    <ul>
+      {category.map((item, index) => {
+        if (index >= numOfShow) return "";
+        return (
+          <li
+            key={item.id}
+            onClick={() =>
+              setFilter((prev) => ({ ...prev, category: item.value }))
+            }
+          >
+            {item.name}
+          </li>
+        );
+      })}
+      {category.length > numOfShow ? (
+        <li className="see-all" onClick={() => setNumOfShow(category.length)}>
+          See all
+        </li>
+      ) : (
+        ""
+      )}
+    </ul>
+  );
+};
+
+const Brands = () => {
+  const [numOfShow, setNumOfShow] = useState(5);
+  const { setFilter } = useContext(FilterContext);
+
+  const handelFilter = (value, checked) => {
+    if (checked) {
+      setFilter(prev => ({...prev, brands : [...prev.brands, value]}));
+    }
+    else {
+      setFilter(prev => ({...prev, brands : prev.brands.filter(item => item !== value)}))
+    }
   }
 
   return (
     <ul>
-      {data.map((item, index) => {
-        if(index >= numOfShow) return '';
-          return <li key={item.id} onClick={()=>  addItem(item.value, true)}>{item.name}</li>
-        })}
-        {data.length > numOfShow ? <li onClick={()=> setNumOfShow(data.length) }>See all</li>:''}
+      {brands.map((item, index) => {
+        if (index >= numOfShow) return "";
+        return (
+          <li key={item.id}>
+            <Checkbox label={item.name} onClick={(e) => handelFilter(item.value ,e.target.checked)} />
+          </li>
+        );
+      })}
+      {brands.length > numOfShow ? (
+        <li className="see-all" onClick={() => setNumOfShow(brands.length)}>
+          See all
+        </li>
+      ) : (
+        ""
+      )}
     </ul>
-  )
-}
+  );
+};
 
+const Features = () => {
+  const [numOfShow, setNumOfShow] = useState(5);
 
+  const { setFilter } = useContext(FilterContext);
 
-const Sidebar = ({addItem}) => {
+  const handelFilter = (value, checked) => {
+    if (checked) {
+      setFilter(prev => ({...prev, features : [...prev.features, value]}));
+    }
+    else {
+      setFilter(prev => ({...prev, features : prev.features.filter(item => item !== value)}))
+    }
+  }
+
   return (
-    <div>
-      <According title='Category' content={<Catigories addItem={addItem} />} />
-      <According title='Brands' content={<Catigories addItem={addItem} />} />
-      <According title='Features' content={<Catigories addItem={addItem} />} />
-      <According title='Price range' content={<Catigories addItem={addItem} />} />
-      <According title='Condition' content={<Catigories addItem={addItem} />} />
-      <According title='Ratings' content={<Catigories addItem={addItem} />} />
-    </div>
-  )
-}
+    <ul>
+      {features.map((item, index) => {
+        if (index >= numOfShow) return "";
+        return (
+          <li key={item.id}>
+            <Checkbox label={item.name} onClick={(e) => handelFilter(item.value ,e.target.checked)} />
+          </li>
+        );
+      })}
+      {features.length > numOfShow ? (
+        <li className="see-all" onClick={() => setNumOfShow(features.length)}>
+          See all
+        </li>
+      ) : (
+        ""
+      )}
+    </ul>
+  );
+};
 
-const data = [
-  {
-    id :1,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-  {
-    id :2,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-  {
-    id :3,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-  {
-    id :4,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-  {
-    id :5,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-  {
-    id :6,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-  {
-    id :7,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-  {
-    id :8,
-    name : 'Mobile accessory',
-    value : 'Mobile accessory',
-    selected : false
-  },
-]
+const Condition = () => {
 
+  const { setFilter } = useContext(FilterContext);
 
-export default Sidebar
+  return (
+    <ul>
+      {condition.map((item, index) => {
+        return (
+          <li key={item.id}>
+            <Radios name={"condition"} label={item.name} onClick={(e) => setFilter(prev => ({...prev, condition : item.value}))} />
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+const Rating = () => {
+
+  const { setFilter } = useContext(FilterContext);
+
+  const handelFilter = (value, checked) => {
+    if (checked) {
+      setFilter(prev => ({...prev, rate : [...prev.rate, value]}));
+    }
+    else {
+      setFilter(prev => ({...prev, rate : prev.rate.filter(item => item !== value)}))
+    }
+  }
+
+  return (
+    <ul>
+      {rating.map((item, index) => {
+        return (
+          <li key={item.id}>
+            <Checkbox label={item.name} onClick={(e) => handelFilter(item.value ,e.target.checked)}  />
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+export default Sidebar;

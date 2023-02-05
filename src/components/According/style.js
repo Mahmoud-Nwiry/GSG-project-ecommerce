@@ -36,4 +36,15 @@ export const AccordingStyled = styled.div`
             transition: max-height 0.3s, padding-bottom 0.3s;
         `}
     }
+
+    & .content ul li {
+        font-weight: 400;
+        font-size: 16px;
+        color: ${props => props.theme.palette.contentColor};
+        margin-bottom: 18px;
+    }
+
+    & .content ul li.see-all {
+        color: ${props => props.theme.palette.primary};
+    }
 `

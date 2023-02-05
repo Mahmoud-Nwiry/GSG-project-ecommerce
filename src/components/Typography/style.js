@@ -39,8 +39,7 @@ export const H6Styled = styled.h6`
 export const Body1Styled = styled.p`
     font-weight: 400;
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.2px;
+    line-height: 19px;
     color: ${props => props.muted ? props.theme.palette.gray500 : props.theme.palette.gray600};
 `
 export const Body2Styled = styled.p`

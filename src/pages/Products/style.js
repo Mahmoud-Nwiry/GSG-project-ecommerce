@@ -23,6 +23,7 @@ export const AreaHeaderStyled = styled.div`
         font-weight: 400;
         line-height: 19px;
         letter-spacing: 0px;
+        color: ${props => props.theme.palette.contentColor};
     }
 
     & .info h6 {
@@ -42,6 +43,19 @@ export const AreaHeaderStyled = styled.div`
     & .controllers .btns {
         display : flex;
         border-radius: 3px;
+    }
+
+    & .controllers select {
+        ${props => `
+            width: 125px;
+            padding: 10px;
+            border: 1px solid ${props.theme.palette.gray300};
+            border-radius: 6px;
+            color: ${props.theme.palette.contentColor};
+            background: ${props.theme.palette.background};
+            font-weight: 400;
+            font-size: 16px;
+        `}
     }
     & .controllers .btns button {
         ${props => `
@@ -75,4 +89,39 @@ export const ProductsAreaGridStyled = styled.div`
     display : grid;
     grid-template-columns: repeat(3, 293px);
     gap : 20px;
+`
+
+export const ControlStyled = styled.div`
+    ${props => `
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap : 10px;
+
+        & select {
+            width: 125px;
+            padding: 10px;
+            border: 1px solid ${props.theme.palette.gray300};
+            border-radius: 6px;
+            color: ${props.theme.palette.contentColor};
+            background: ${props.theme.palette.background};
+            font-weight: 400;
+            font-size: 16px;
+        }
+    `}
+`
+
+export const FilterKeyWordsStyled = styled.div`
+    display: flex;
+    align-items : center;
+    gap: 8px;
+    margin: 20px 0;
+
+    & .clear {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: ${props => props.theme.palette.primary};
+        cursor: pointer;
+    }
 `

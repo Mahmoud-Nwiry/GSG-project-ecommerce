@@ -10,6 +10,7 @@ export const ButtonStyled = styled.button`
         font-size: ${props.fontSize || '16px'};
         border : 1px solid ${props.border || props.theme.palette.primary};
         border-radius: 6px;
+        cursor: pointer;
     `}
 `
 

@@ -39,9 +39,9 @@ export const H6 = ({ children, style }) => {
     <H6Styled {...(style ? (style = { style }) : "")}>{children}</H6Styled>
   );
 };
-export const Body1 = ({ children, style }) => {
+export const Body1 = ({ children, ...other }) => {
   return (
-    <Body1Styled {...(style ? (style = { style }) : "")}>
+    <Body1Styled {...(other)}>
       {children}
     </Body1Styled>
   );
