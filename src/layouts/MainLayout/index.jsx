@@ -8,12 +8,12 @@ import Navbar from '../../components/Navbar'
 
 import MainLogo from '../../assets/images/logo.png'
 import AuthLinks from '../../components/Navbar/AuthLinks'
-import Input from '../../components/inputs/Input'
 import Links from './Links'
 import { MdExpandMore } from 'react-icons/md'
 import { LinksListStyled } from './style'
 
 import DeFlag from '../../assets/images/flags/DE@2x.png'
+import Search from './Search'
 
 const index = ({children}) => {
   return (
@@ -21,7 +21,7 @@ const index = ({children}) => {
         <Header>
             <Navbar>
                 <img src={MainLogo} alt="logo" />
-                <Input placeholder='search' style={{width : 500}} />
+                <Search />
                 <AuthLinks />
             </Navbar>
         </Header>

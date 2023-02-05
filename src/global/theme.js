@@ -29,7 +29,24 @@ export const lightTheme = {
     }
 }
 
+
+const darkPalette = {
+    background : '#111',
+    pageBackground : '#151719',
+    contentColor : '#FFFFFF',
+    gray100 : '#151719',
+    gray200 : '#212529',
+    gray300 : '#292b2e',
+    gray400 : '#3b3d41',
+    gray500 : '#747679',
+    gray600 : '#ced4da',
+    gray800 : '#F7FAFC',
+}
+
 export const darkTheme = {
     theme : 'dark',
-    palette,
+    palette : {
+        ...darkPalette,
+        ...palette
+    }
 }

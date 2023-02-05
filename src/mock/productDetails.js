@@ -1,11 +1,12 @@
 import ProductImage1 from "../assets/images/pd1.png"
+import ProductImage2 from "../assets/images/re1.png"
 import SellerImage from "../assets/images/seller.png"
 
 
 const data = {
     id : 1,
     name : 'Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle',
-    images : [ProductImage1,ProductImage1,ProductImage1,ProductImage1,ProductImage1],
+    images : [ProductImage1,ProductImage2,ProductImage1,ProductImage2,ProductImage1,ProductImage2],
     rating : '9.3',
     reviews : '27',
     sold : '154',

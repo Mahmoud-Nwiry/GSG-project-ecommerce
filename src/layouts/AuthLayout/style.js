@@ -8,4 +8,6 @@ export const FormLayoutStyled = styled.section`
     justify-content : center;
     align-items : center;
     position : relative;
+    padding-bottom: 15vh;
+    padding-top: 2vh;
 `
