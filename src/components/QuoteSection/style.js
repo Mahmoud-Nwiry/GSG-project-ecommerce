@@ -33,4 +33,17 @@ export const QuoteSectionStyled = styled.section`
         color : ${props => props.theme.palette.contentColor};
         margin-bottom: 18px;
     }
+
+    & form .quantity select{
+        width: 110px;
+        background: ${props => props.theme.palette.background};
+        border: 1px solid ${props => props.theme.palette.gray300};
+        border-radius: 6px;
+        padding: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        color: ${props => props.theme.palette.contentColor};
+        margin-left: 10px;
+
+    }
 `

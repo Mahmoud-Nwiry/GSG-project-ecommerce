@@ -39,7 +39,7 @@ export const TimePartStyled = styled.div`
     height : 50px;
     background-color: ${props => props.theme.palette.gray800};
     border-radius: 4px;
-    color : #fff;
+    color : ${props => props.theme.palette.background};
     text-align : center;
     padding-top: 8px;
 

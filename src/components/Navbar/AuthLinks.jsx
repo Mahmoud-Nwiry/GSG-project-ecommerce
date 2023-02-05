@@ -19,7 +19,7 @@ const AuthLinks = () => {
             <Link to='/'><FaHeart /><p>Orders</p></Link>
         </li>
         <li>
-            <Link to='/'><FaShoppingCart /><p>My cart</p></Link>
+            <Link to='/cart'><FaShoppingCart /><p>My cart</p></Link>
         </li>
     </AuthLinksStyled>
   )

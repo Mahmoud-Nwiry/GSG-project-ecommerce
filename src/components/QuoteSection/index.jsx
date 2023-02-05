@@ -37,12 +37,17 @@ const QuoteSection = () => {
           style={{marginTop : '20px', resize: 'vertical'}}
           rows="3"
         />
+        <div className="quantity">
         <Input
           value={item}
           onChange={(e) => handelItem(e.target.value)}
           placeholder="Quantity"
           style={{width : '50%',margin : '20px 0'}}
         />
+        <select>
+          <option value="pics">Pics</option>
+        </select>
+        </div>
         <Button style={{width: 'fit-content', display : 'block'}}>Send inquiry</Button>
       </Form>
     </QuoteSectionStyled>

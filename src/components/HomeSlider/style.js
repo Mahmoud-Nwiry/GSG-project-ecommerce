@@ -29,7 +29,7 @@ export const CategoryListStyled = styled.ul`
     & li.active{
         ${props => `
             background-color: ${props.theme.palette.primaryLight};
-            color : ${props.theme.palette.contentColor};
+            color : ${props.theme.theme === 'light' ? props.theme.palette.contentColor : props.theme.palette.background};
             font-weight: 500;
         `}
     }
@@ -56,7 +56,7 @@ export const ImageSectionStyled = styled.div`
         color: ${props => props.theme.palette.contentColor};
     }
     & button{
-        background: #FFFFFF;
+        background: ${props => props.theme.palette.background};
         border-radius: 6px;
         border : 0;
         margin-top: 20px;
