@@ -1,6 +1,2 @@
 # Redirects from what the browser requests to what we serve
-/              /
-/auth/login              /auth/login
-/auth/signup              /auth/signup
-/products              /products
-/cart              /cart
+/*            /index.html
