@@ -180,3 +180,4 @@ const DetailsBox = () => {
 };
 
 export default DetailsBox;
+
