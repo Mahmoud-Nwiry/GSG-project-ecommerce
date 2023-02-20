@@ -1,9 +1,9 @@
 import React from 'react'
 import { FormStyled } from './style'
 
-export const Form = ({children, ...other}) => {
+export const Form = ({onSubmit, children, ...other}) => {
   return (
-    <FormStyled {...(other)}>
+    <FormStyled onSubmit={onSubmit} {...(other)}>
         {children}
     </FormStyled>
   )
