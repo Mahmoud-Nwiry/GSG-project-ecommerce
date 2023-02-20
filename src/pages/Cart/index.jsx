@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../../components/Header'
 import Navbar from '../../components/Navbar'
 import AuthLinks from '../../components/Navbar/AuthLinks'
@@ -12,16 +12,23 @@ import { Body1, H4 } from '../../components/Typography'
 import { CartGridStyled } from './style'
 import data from '../../mock/cart'
 import ProductCart from './ProductCart'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 import { MdArrowBack } from 'react-icons/md'
 import Checkout from './Checkout'
 import Services from './Services'
 import Saved from './Saved'
+import AuthContext from '../../AuthContext'
 
 const Cart = () => {
+
+  const {isAuth} = useContext(AuthContext)
+
   return (
     <HomeStyled>
+
+        {!isAuth && <Navigate to='/auth/login' />}
+
         <Header>
             <Navbar>
                 <img src={MainLogo} alt="logo" />

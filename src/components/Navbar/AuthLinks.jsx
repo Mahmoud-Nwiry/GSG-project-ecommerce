@@ -21,13 +21,13 @@ const AuthLinks = () => {
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/products">
           <MdMessage />
           <p>Message</p>
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/products/1">
           <FaHeart />
           <p>Orders</p>
         </Link>
