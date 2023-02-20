@@ -21,13 +21,13 @@ const AuthLinks = () => {
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/products">
           <MdMessage />
           <p>Message</p>
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/products/1">
           <FaHeart />
           <p>Orders</p>
         </Link>
@@ -40,9 +40,10 @@ const AuthLinks = () => {
       </li>
       <li>
         <span
-          onClick={() =>
-            setTheme((prev) => (prev === "light" ? "dark" : "light"))
-          }
+          onClick={() =>{
+            setTheme((prev) => (prev === "light" ? "dark" : "light"));
+            localStorage.setItem("ecommerce-theme", theme === "light" ? "dark" : "light");
+          }}
         >
           {theme === "light" ? <BsMoonFill /> : <BsSunFill />}
         </span>
