@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Outlet } from 'react-router-dom';
 
 
@@ -10,10 +10,10 @@ export const authRouts = {
     element : <Outlet />,
     children :[{
         path : 'login',
-        element : <Suspense fallback="Loading..."><Login /></Suspense>,
+        element : <Login />,
     },
     {
         path : 'signup',
-        element : <Suspense fallback="Loading..."><Signup /></Suspense>,
+        element : <Signup />,
     }]
 };

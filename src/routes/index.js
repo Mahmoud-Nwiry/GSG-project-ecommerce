@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { authRouts } from './authRoutes'
 
 
@@ -14,36 +14,26 @@ const Cart = lazy(() => import('../pages/Cart'))
 export const routes = [
   {
     index: true,
-    element: <Suspense fallback="Loading...">
-      <MainLayout>
+    element: <MainLayout>
         <Home />
       </MainLayout>
-    </Suspense>
   },
   {
     path: '/products',
-    element: <Suspense fallback="Loading...">
-                <MainLayout />
-            </Suspense>,
+    element: <MainLayout />,
     children: [
       {
         index: true,
-        element: <Suspense fallback="Loading...">
-                  <Products />
-                </Suspense>
+        element: <Products />
       }, {
         path: ':id',
-        element: <Suspense fallback="Loading...">
-                  <ProductsDetails />
-                  </Suspense>
+        element: <ProductsDetails />
       }
     ]
   },
   {
     path: '/cart',
-    element: <Suspense fallback="Loading...">
-              <Cart />
-            </Suspense>
+    element: <Cart />
   },
   authRouts
 ];
