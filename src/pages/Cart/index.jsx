@@ -22,12 +22,12 @@ import AuthContext from '../../AuthContext'
 
 const Cart = () => {
 
-  const {isAuth} = useContext(AuthContext)
+  const {isAuth} = useContext(AuthContext);
 
   return (
     <HomeStyled>
 
-        {!isAuth && <Navigate to='/auth/login' />}
+        {isAuth ? '' : <Navigate to='/auth/login' />}
 
         <Header>
             <Navbar>
